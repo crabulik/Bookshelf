@@ -1,0 +1,105 @@
+```plantuml
+@startuml
+scale 1.1
+skinparam backgroundColor Snow
+
+package BookshelfIdentities <<Rectangle>> {
+    entity User {
+    }
+
+    entity Admin {
+    }
+
+    entity Mentor {
+    }
+}
+
+entity Book {
+}
+
+entity Image {
+}
+
+entity Attachment {
+}
+
+entity BookRegistrationRequest {
+}
+
+entity ReadingList {
+}
+
+entity ReadingListItem {
+}
+
+entity RentRequest {
+}
+
+entity Purchase {
+}
+
+entity BookCopy {
+}
+
+entity Rent {
+}
+
+entity ProlongationRequest {
+}
+
+entity Transfer {
+}
+
+entity ReviewRequest {
+}
+
+entity Rating {
+}
+
+entity Review {
+}
+
+entity Notification {
+}
+
+entity Audit {
+}
+
+User ||..o{ BookRegistrationRequest: Create
+Book |o..o| BookRegistrationRequest: Associated
+Admin |o..o{ BookRegistrationRequest: Approve registration
+
+User }o..o{ Book: Favourite books
+
+Book ||..o{ Image
+Book ||..o{ Attachment
+Book ||..o{ BookCopy
+
+Purchase }o..|{ Book
+Purchase }|..|{ BookCopy
+
+
+User ||..o{ RentRequest: Create
+RentRequest }o..|| Book: Associated
+RentRequest ||..o| Rent: Have approved
+Rent }o..|| BookCopy: Associated
+Rent ||..o{ Transfer: Shipment, return
+Rent }o..|| User: Rentee
+Rent ||..o{ ProlongationRequest 
+
+Mentor ||..o{ ReadingList
+ReadingList ||..o{ ReadingListItem
+ReadingListItem }o..|| Book
+
+Admin |o..o{ ReviewRequest: Create
+Mentor |o..o{ ReviewRequest: Create
+ReviewRequest }o..|| Mentor: Reviewer
+ReviewRequest |o..o| Rating: Associated
+ReviewRequest |o..o| Review: Associated
+Book ||..o{ Rating
+Book ||..o{ Review
+Mentor ||..o{ Rating: Reviewer
+Mentor ||..o{ Review: Reviewer
+
+@enduml
+```
