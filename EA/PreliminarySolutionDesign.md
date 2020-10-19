@@ -10,7 +10,7 @@ From the Architecture point of view the Bookshelf is a client-server application
 
 The storage layer of the Bookshelf contains two major parts
 
-- Main relational storage (any SQL storage engine). Due to a moderate number of system users, there is no need for noSQL engines.
+- Main Database (any SQL or NoSQL storage engine). The exact engine should be selected on SA level.
 
 - Blob storage for storing media files such as cover images of the books, sample pages, attachments. Any solution with S3 like API is preferable for a soft switch to and from cloud solutions.
 

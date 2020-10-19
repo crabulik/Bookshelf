@@ -1,0 +1,83 @@
+```plantuml
+@startgantt
+<style>
+ganttDiagram {
+	BackGroundColor Snow
+}
+</style>
+
+[Initial preparation] lasts 10 days
+[User management] starts 5 days after [Initial preparation]'s start
+[User management] lasts 10 days
+[Books catalog with filtering] starts after [User management]'s end
+[Books catalog with filtering] lasts 10 days
+[Book's details] starts after [Books catalog with filtering]'s end
+[Book's details] lasts 5 days
+[Managing mentor's reading lists] starts after [Book's details]'s end
+[Managing mentor's reading lists] lasts 10 days
+[Reading lists catalog with filtering] starts after [Managing mentor's reading lists]'s end
+[Reading lists catalog with filtering] lasts 7 days
+[Reading list details] starts after [Reading lists catalog with filtering]'s end
+[Reading list details] lasts 3 days
+[Favorite books] starts after [Reading list details]'s end
+[Favorite books] lasts 5 days
+
+[Book registration and requests management + Amazon Integration] starts 5 days after [User management]'s start
+[Book registration and requests management + Amazon Integration] lasts 15 days
+[Book review requests and management] starts after [Book registration and requests management + Amazon Integration]'s end
+[Book review requests and management] lasts 15 days
+[Book review and rating by mentor] starts after [Book review requests and management]'s end
+[Book review and rating by mentor] lasts 7 days
+[Reviews summary on Book's details] starts after [Book review and rating by mentor]'s end
+[Reviews summary on Book's details] lasts 3 days
+[Book review requests forwarding] starts after [Reviews summary on Book's details]'s end
+[Book review requests forwarding] lasts 5 days
+
+[MVP] happens after [Book review requests forwarding]'s end
+[MVP] happens after [Favorite books]'s end
+-- Phase Two --
+[Purchases management] starts after [MVP]'s end
+[Purchases management] lasts 15 days
+[Book copies management] starts after [Purchases management]'s end
+[Book copies management] lasts 15 days
+[Book copies transfer via NovaPoshta without integration] starts after [Book copies management]'s end
+[Book copies transfer via NovaPoshta without integration] lasts 10 days
+[Book copies transfer scheduler] starts after [Book copies transfer via NovaPoshta without integration]'s end
+[Book copies transfer scheduler] lasts 10 days
+
+[Rent requests by user] starts after [MVP]'s end
+[Rent requests by user] lasts 5 days
+[Manual rent requests management] starts after [Rent requests by user]'s end
+[Manual rent requests management] lasts 20 days
+[Book copies transfer on Offline meetings] starts after [Manual rent requests management]'s end
+[Book copies transfer on Offline meetings] lasts 10 days
+[Rent prolongation management] starts after [Book copies transfer on Offline meetings]'s end
+[Rent prolongation management] lasts 10 days
+[Purchase recommendation] starts after [Rent prolongation management]'s end
+[Purchase recommendation] lasts 5 days
+
+[v1 release] happens after [Book copies transfer scheduler]'s end
+[v1 release] happens after [Purchase recommendation]'s end
+-- Phase Three --
+[Integration with NovaPoshta services] starts after [v1 release]'s end
+[Integration with NovaPoshta services] lasts 15 days
+[Book copies transfer via UkrPoshta] starts after [Integration with NovaPoshta services]'s end
+[Book copies transfer via UkrPoshta] lasts 15 days
+[Book copies transfer alerting] starts after [Book copies transfer via UkrPoshta]'s end
+[Book copies transfer alerting] lasts 5 days
+[Reading lists in Mentor Profiles] starts after [Book copies transfer alerting]'s end
+[Reading lists in Mentor Profiles] lasts 5 days
+
+[Automatization for registration requests management] starts after [v1 release]'s end
+[Automatization for registration requests management] lasts 10 days
+[Automatization for rent requests management] starts after [Automatization for registration requests management]'s end
+[Automatization for rent requests management] lasts 10 days
+[Rent disputes management] starts after [Automatization for rent requests management]'s end
+[Rent disputes management] lasts 10 days
+[Book copies reports] starts after [Rent disputes management]'s end
+[Book copies reports] lasts 10 days
+
+[v2 release] happens after [Reading lists in Mentor Profiles]'s end
+[v2 release] happens after [Book copies reports]'s end
+@endgantt
+```

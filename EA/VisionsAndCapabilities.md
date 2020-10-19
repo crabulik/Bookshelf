@@ -44,6 +44,14 @@
 	- Объединение получений и возвратов книг в пакеты для обработки администратором
 	- Интеграция с сторонними почтовыми сервисами.
 
-##
+## WBS
 
 ![WBS](./WBS/wbs.svg)
+
+## Roadmap
+
+Legend:
+
+	- The amount of days represents the complexity of the task, not the actual implementation duration.
+
+![Roadmap](./Roadmap/roadmap.png)
